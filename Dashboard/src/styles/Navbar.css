@@ -55,6 +55,31 @@
   align-items: center;
 }
 
+.searchbar-container {
+  flex: 1; /* ocupa espacio proporcional */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.searchbar {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px 12px;
+  border: 1px solid #b6b6bd;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.searchbar:focus {
+  border-color: #003865;
+}
+
+
 /* Sidebar */
 .sidebar {
   width: 240px;
@@ -63,7 +88,7 @@
   position: fixed;
   top: 0px;
   left: -240px; /* oculto por defecto */
-  height: calc(100vh - 80px);
+  height: calc(100vh - 50px);
   padding: 20px;
   left: -100%;
   transition: all 0.5s ease;
