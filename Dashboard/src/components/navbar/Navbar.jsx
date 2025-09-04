@@ -1,10 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { IoIosMenu } from "react-icons/io";
+import { IoIosMenu, IoMdNotifications } from "react-icons/io";
 import { IoSearchSharp } from "react-icons/io5";
 import "@styles/Navbar.css";
 import logo from "@assets/logo.png"
 import Sidebar from "./SideNavbar"
+import User from "./User"
 
 const Navbar = () => {
     const [ showNav, setShowNav] = useState (false);
@@ -24,13 +25,15 @@ const Navbar = () => {
           </div>
 
           <div className="nav-item">
-            <div className="sidebar-header">
+            { !showNav && (
+                <div className="sidebar-header">
                 <img src={logo} alt="logo" className="logo" />
                 <h1 className="logo-text">
                     <span className="logo-im">IM</span>
                     <span className="logo-progress">PROGRESS</span>
                 </h1>
-            </div>
+                </div>
+            )}
           </div>
 
           <div className="nav-item searchbar-container">
@@ -41,10 +44,9 @@ const Navbar = () => {
             /><IoSearchSharp className="icon"/>
           </div>
 
-          {/* <div className="nav-item">User Photo</div>
-          <div className="nav-item">Name</div>
-          <div className="nav-item">Profile</div>
-          <div className="nav-item">Notifications</div> */}
+            <div>
+                <User />
+            </div>
         </nav>
       </header>
 
