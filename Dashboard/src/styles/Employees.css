@@ -14,7 +14,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 18px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -26,6 +26,7 @@
   color: black;
   line-height: 1.6; 
   vertical-align: middle; 
+  box-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .employee-table th {
@@ -45,14 +46,15 @@
 
 /* Específicamente para celdas con texto largo */
 .employee-table td {
-  word-wrap: break-word; /* Permite que palabras largas se rompan */
-  overflow-wrap: break-word; /* Soporte adicional para navegadores */
-  max-width: 200px; /* Limita el ancho máximo para forzar salto de línea */
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  max-width: 200px;
 }
 
 .employee-row:hover {
   background-color: #ffffff;
   cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5); 
 }
 
 .employee-table img.empleado-img {
@@ -61,7 +63,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: none; 
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .titulo{
@@ -69,11 +71,11 @@
     font-family: "Poppins-extralight", sans-serif;
     font-size: 40px;
     margin-left: 70px;
-    margin-bottom: 10px ;
+    margin-bottom: 40px ;
 }
 
 .titulo.rend{
-  margin-left: 60px;
+  margin-left: 50px;
 }
 
 /* Íconos Status */

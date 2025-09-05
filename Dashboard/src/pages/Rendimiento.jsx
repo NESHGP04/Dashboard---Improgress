@@ -1,37 +1,65 @@
+import { useState } from "react";
+import placeholderFoto from "@assets/user1.png";
 import Navbar from '@components/navbar/Navbar'
 import Header from '@components/rendimiento/headerContainer'
-import { useState } from "react";
-import LineChart from "@components/otro/LineChart";
-import PieChart from "@components/otro/PieChart";
-import StatusList from "@components/otro/StatusList";
+import LineChart from "@components/rendimiento/LineChart";
+import PieChart from "@components/rendimiento/PieChart";
+import StatusList from "@components/rendimiento/StatusList";
+import dashboardData from "../../JSON/employeesData.json";
+import '@styles/Rendimiento.css';
 
 export default function Rendimiento(){
+    const { indicatorsData, graphData, tableData } = dashboardData;
+    const [showNav, setShowNav] = useState(false); // estado para el sidebar
+
     const years = [2025, 2024, 2023, 2022, 2021];
     const [selectedYear, setSelectedYear] = useState(2025);
-      const empleados = {
-    alto: [
-      { id: 1, nombre: "Alejandro Morales", score: 0.85 },
-      { id: 2, nombre: "Rosio María Nájera", score: 0.83 },
-      { id: 3, nombre: "Samuel Deluque", score: 0.81 },
-    ],
-    medio: [
-      { id: 4, nombre: "Sebastián Gómez", score: 0.75 },
-      { id: 5, nombre: "Luciana Caballeros", score: 0.73 },
-    ],
-    bajo: [
-      { id: 6, nombre: "Macarena Sofía Mariscal", score: 0.64 },
-    ]
-  };
+
+    // Arrays para StatusList dinámicamente
+    const empleados = {
+    alto: tableData
+        .filter((emp) => emp.status === "High")
+        .map((emp) => ({
+        id: emp.id,
+        nombre: emp.name,
+        performance: emp.performance,
+        status: emp.status,
+        foto: placeholderFoto,
+        })),
+    medio: tableData
+        .filter((emp) => emp.status === "Medium")
+        .map((emp) => ({
+        id: emp.id,
+        nombre: emp.name,
+        performance: emp.performance,
+        status: emp.status,
+        foto: placeholderFoto,
+        })),
+    bajo: tableData
+        .filter((emp) => emp.status === "Low")
+        .map((emp) => ({
+        id: emp.id,
+        nombre: emp.name,
+        performance: emp.performance,
+        status: emp.status,
+        foto: placeholderFoto,
+        })),
+    };
 
     return (
         <>
-            <Navbar />
+            <Navbar showNav={showNav} setShowNav={setShowNav} />
             <div className="rendimiento-container">
-                <Header years={years} selectedYear={selectedYear} setSelectedYear={setSelectedYear} />
+                <Header 
+                    years={years} 
+                    selectedYear={selectedYear}
+                    setSelectedYear={setSelectedYear}
+                    indicators={indicatorsData}
+                />
             
                 <div className="charts-row">
-                    <div className="chart-box"><LineChart /></div>
-                    <div className="chart-box"><PieChart /></div>
+                    <div className="chart-box"><LineChart data={graphData}/></div>
+                    <div className="chart-box"><PieChart indicators={indicatorsData} /></div>
                 </div>
             
                 <div className="status-row">
@@ -41,5 +69,5 @@ export default function Rendimiento(){
                 </div>
             </div>
         </>
-    )
+    );
 }

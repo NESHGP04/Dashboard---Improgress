@@ -137,3 +137,21 @@
   font-weight: 600;
   color: #555;
 }
+
+/* Push con Sidenavbar */
+.rendimiento-container {
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+  padding: 20px;
+}
+
+.rendimiento-container.shifted {
+  margin-left: 240px; /* mismo ancho que tu sidebar */
+}
+
+/* Opcional: hacer que sea responsive */
+@media screen and (max-width: 768px) {
+  .rendimiento-container.shifted {
+    margin-left: 200px; /* menos en pantallas pequeñas */
+  }
+}

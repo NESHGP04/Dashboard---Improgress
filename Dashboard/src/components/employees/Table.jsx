@@ -61,10 +61,10 @@ export default function Table({ rows = [] }) {
         </thead>
         <tbody>
           {filteredRows.map((emp, i) => (
-            <tr key={emp.id}>
-              <td>
+            <tr key={emp.id} className='employee-row'>
+              
+              <td >
                 <img
-                //   src={emp.foto || placeholderFoto}
                   src={fotos[i % fotos.length]}
                   alt={emp.nombre}
                   className="empleado-img"
