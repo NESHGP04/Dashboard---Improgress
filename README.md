@@ -1,5 +1,5 @@
 # Dashboard - Improgress
-# Gestión de Empleados
+## Gestión de Empleados
 
 Este proyecto es una aplicación web desarrollada en **React** que permite gestionar y visualizar información sobre empleados, rendimiento y usuarios de la empresa. La aplicación incluye dashboards de rendimiento y tablas de empleados.
 
