@@ -247,6 +247,17 @@ header svg{
   margin-left: 5px;
 }
 
+@media screen and (max-width: 1024px) {
+  .content {
+    margin-left: 0; /* ocupa todo el ancho */
+    transition: margin 0.3s ease;
+  }
+
+  .sidebar {
+    width: 220px; /* opcional: más estrecho en tablet */
+  }
+}
+
 @media (max-width: 768px) {
   .main-nav, .sub-nav {
     flex-wrap: wrap;
@@ -262,11 +273,49 @@ header svg{
     font-size: 14px;
   }
 
+  .searchbar {
+    max-width: 90%;
+  }
+
+  .nav-item {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
+
   .logo-container {
     order: -1;
     width: 100%;
     margin-bottom: 10px;
     border-radius: 0;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    height: 100vh;
+    z-index: 9999;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+    .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 999;
+    display: none;
+  }
+
+  .overlay.active {
+    display: block;
   }
 }
 

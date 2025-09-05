@@ -7,7 +7,7 @@
 }
 
 .subtitulo{
-    font-size: 27px;
+    font-size: 1.8rem;
     color: black;
     margin-left: 70px;
     margin-bottom: 5px;
@@ -138,20 +138,25 @@
   color: #555;
 }
 
-/* Push con Sidenavbar */
-.rendimiento-container {
-  transition: margin-left 0.3s ease;
-  margin-left: 0;
-  padding: 20px;
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .status-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.rendimiento-container.shifted {
-  margin-left: 240px; /* mismo ancho que tu sidebar */
-}
-
-/* Opcional: hacer que sea responsive */
 @media screen and (max-width: 768px) {
   .rendimiento-container.shifted {
     margin-left: 200px; /* menos en pantallas pequeñas */
+  }
+
+  .charts-row {
+    grid-template-columns: 1fr; 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .status-row {
+    grid-template-columns: 1fr;
   }
 }

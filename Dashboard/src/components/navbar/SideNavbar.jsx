@@ -13,8 +13,8 @@ export default function SideNavbar({ showNav, setShowNav }){
     const [activeItem, setActiveItem] = useState("Rendimiento");
 
       const menuItems = [
-        { name: "Rendimiento", icon: <FaChartLine /> },
         { name: "Empleados", icon: <FaUser /> },
+        { name: "Rendimiento", icon: <FaChartLine /> },
         { name: "Revisión", icon: <IoChatbubbleEllipsesSharp /> },
     ];
 

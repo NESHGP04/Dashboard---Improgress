@@ -63,9 +63,9 @@ export default function Rendimiento(){
                 </div>
             
                 <div className="status-row">
-                    <StatusList title="Status Alto" color="#003865" empleados={empleados.alto} />
-                    <StatusList title="Status Medio" color="#0095D9" empleados={empleados.medio} />
-                    <StatusList title="Status Bajo" color="#FC4C02" empleados={empleados.bajo} />
+                    <StatusList title="Status Alto" empleados={empleados.alto} />
+                    <StatusList title="Status Medio" empleados={empleados.medio} />
+                    <StatusList title="Status Bajo" empleados={empleados.bajo} />
                 </div>
             </div>
         </>
