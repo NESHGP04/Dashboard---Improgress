@@ -2,10 +2,18 @@
 import { useState } from 'react';
 import placeholderFoto from '@assets/logo.png';
 import { IoSearchSharp } from "react-icons/io5";
+import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { RiArrowDownDoubleFill } from "react-icons/ri";
+import { TbBaselineDensityMedium } from "react-icons/tb";
+import user1 from '@assets/user1.png';
+import user2 from '@assets/user2.png';
+import user3 from '@assets/user3.png';
+import user4 from '@assets/user4.png';
 import '@styles/Employees.css';
 
 export default function Table({ rows = [] }) {
-  const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('');
+    const fotos = [user1, user2, user3, user4];
 
   // Filtra empleados por nombre
   const filteredRows = search
@@ -13,6 +21,20 @@ export default function Table({ rows = [] }) {
         emp.nombre?.toLowerCase().includes(search.toLowerCase())
       )
     : rows;
+
+    // función para renderizar ícono según status
+    const renderStatusIcon = (status) => {
+        switch (status?.toLowerCase()) {
+        case "high":
+            return <MdOutlineKeyboardDoubleArrowUp className="status-icon high" />;
+        case "low":
+            return <RiArrowDownDoubleFill className="status-icon low" />;
+        case "medium":
+            return <TbBaselineDensityMedium className="status-icon medium" />;
+        default:
+            return null;
+        }
+    };
 
   return (
     <div className="table-container">
@@ -38,11 +60,12 @@ export default function Table({ rows = [] }) {
           </tr>
         </thead>
         <tbody>
-          {filteredRows.map(emp => (
+          {filteredRows.map((emp, i) => (
             <tr key={emp.id}>
               <td>
                 <img
-                  src={emp.foto || placeholderFoto}
+                //   src={emp.foto || placeholderFoto}
+                  src={fotos[i % fotos.length]}
                   alt={emp.nombre}
                   className="empleado-img"
                 />
@@ -50,7 +73,7 @@ export default function Table({ rows = [] }) {
               <td>{emp.nombre}</td>
               <td>{emp.departamento}</td>
               <td>{emp.rendimiento}</td>
-              <td>{emp.status}</td>
+              <td>{renderStatusIcon(emp.status)}</td>
             </tr>
           ))}
         </tbody>

@@ -21,8 +21,8 @@
 .employee-table th,
 .employee-table td {
   padding: 20px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+  text-align: center; 
+  border-bottom: 1px solid #ffffff;
   color: black;
   line-height: 1.6; 
   vertical-align: middle; 
@@ -35,6 +35,14 @@
   line-height: 1.3;
 }
 
+/* Bordes redondeados solo en las esquinas exteriores */
+.employee-table thead tr th:first-child {
+  border-top-left-radius: 15px;
+}
+.employee-table thead tr th:last-child {
+  border-top-right-radius: 15px;
+}
+
 /* Específicamente para celdas con texto largo */
 .employee-table td {
   word-wrap: break-word; /* Permite que palabras largas se rompan */
@@ -43,7 +51,7 @@
 }
 
 .employee-row:hover {
-  background-color: #e0eaff;
+  background-color: #ffffff;
   cursor: pointer;
 }
 
@@ -61,4 +69,24 @@
     font-family: "Poppins-extralight", sans-serif;
     font-size: 40px;
     margin-left: 70px;
+}
+
+/* Íconos Status */
+.status-icon {
+  font-size: 35px;
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.status-icon.high {
+  color: #05A53C;
+}
+
+.status-icon.medium {
+  color: #FFAC12;
+}
+
+.status-icon.low {
+  color: #B71414;
 }

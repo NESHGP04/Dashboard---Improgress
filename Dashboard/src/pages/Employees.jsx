@@ -30,6 +30,7 @@ export default function Employees(){
             <Navbar />
             <h1 className='titulo'> Panel de Empleados </h1>
             <Table rows={rows} />
+            <h2>{rows.length} Empleados en total</h2>
         </div>
     )
 }
