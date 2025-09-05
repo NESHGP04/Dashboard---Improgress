@@ -69,6 +69,11 @@
     font-family: "Poppins-extralight", sans-serif;
     font-size: 40px;
     margin-left: 70px;
+    margin-bottom: 10px ;
+}
+
+.titulo.rend{
+  margin-left: 60px;
 }
 
 /* Íconos Status */

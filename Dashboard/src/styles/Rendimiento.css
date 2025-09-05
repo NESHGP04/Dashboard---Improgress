@@ -1,0 +1,139 @@
+/* Header */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -20px 50px 0 -20px;
+}
+
+.subtitulo{
+    font-size: 27px;
+    color: black;
+    margin-left: 70px;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    font-weight: 500;
+
+}
+
+.arrow-icon{
+    font-size: 20px;
+    color: #FC4C02;
+    margin-left: 60px;
+}
+
+.span-porcentaje{
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #737B8B;
+    margin-left: 10px;
+}
+
+.span-porcentaje.num{
+    color: #FC4C02;
+    font-size: 1.2rem;
+}
+
+.select-year {
+    background: #ffffff;
+    color: black;
+    padding: 6px 6px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    font-family: inherit;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 0.55rem;
+    margin-bottom: 0.30rem;
+    margin-left: 3.5rem;
+}
+
+/* Btn Reporte */
+.report-btn{
+    background-color: white;
+    color: #003865;
+    padding: 12px 50px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    transition: 0.2s ease-in-out;
+}
+
+.report-btn:hover {
+  background-color: #d4d3d2;
+  color: #002544;
+}
+
+/* Body */
+.rendimiento-container {
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  color: #2d2d2d;
+  background-color: #ffffff;
+}
+
+/* Charts */
+.charts-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.chart-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Status */
+.status-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.status-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.status-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.status-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.status-name {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #2d2d2d;
+}
+
+.status-score {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
