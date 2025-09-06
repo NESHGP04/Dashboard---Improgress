@@ -55,34 +55,6 @@
   align-items: center;
 }
 
-.searchbar-container {
-  flex: 1; /* ocupa espacio proporcional */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 20px;
-}
-
-.searchbar {
-  width: 100%;
-  max-width: 500px;
-  padding: 8px 12px;
-  border: 1px solid #b6b6bd;
-  border-radius: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s ease-in-out;
-}
-
-.searchbar.ml-1{
-  margin-bottom: 18px;
-}
-
-.searchbar:focus {
-  border-color: #003865;
-}
-
 
 /* Sidebar */
 .sidebar {
@@ -246,6 +218,19 @@ header svg{
   color: #003865d5;
   margin-left: 5px;
 }
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre ícono y logo */
+}
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: #003865;
+}
+
 
 @media screen and (max-width: 1024px) {
   .content {

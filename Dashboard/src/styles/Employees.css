@@ -4,7 +4,7 @@
 .table-container {
   font-family: "Poppins", sans-serif;
   width: 90%;
-  margin: auto; /* espacio para header y botón */
+  margin: auto;
   overflow-x: auto;
   border-radius: 15px;
   max-height: calc(100vh - 180px);
@@ -99,4 +99,33 @@
 
 .status-icon.low {
   color: #B71414;
+}
+
+.searchbar-container {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.searchbar {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px 12px;
+  border: 1.1px solid #b6b6bd;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.searchbar.ml-1{
+  margin-bottom: 18px;
+  margin-left: 2.5px;
+}
+
+.searchbar:focus {
+  border-color: #003865;
 }

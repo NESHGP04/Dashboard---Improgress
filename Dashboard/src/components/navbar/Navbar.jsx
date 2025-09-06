@@ -14,41 +14,31 @@ const Navbar = () => {
     <div className="layout">
       {/* Upper Navbar */}
       <header className="main-header">
-        <nav className="main-nav">
+  <nav className="main-nav">
 
-          <div className="nav-item"> 
-            <IoIosMenu 
-                onClick={()=> {
-                    setShowNav(!showNav)
-                }}
-            /> 
-          </div>
+    {/* Menú + Logo + Nombre */}
+    <div className="logo-wrapper">
+      <IoIosMenu 
+        className="menu-icon"
+        onClick={() => setShowNav(!showNav)}
+      />
+      { !showNav && (
+        <div className="sidebar-header">
+          <img src={logo} alt="logo" className="logo" />
+          <h1 className="logo-text">
+            <span className="logo-im">IM</span>
+            <span className="logo-progress">PROGRESS</span>
+          </h1>
+        </div>
+      )}
+    </div>
 
-          <div className="nav-item">
-            { !showNav && (
-                <div className="sidebar-header">
-                <img src={logo} alt="logo" className="logo" />
-                <h1 className="logo-text">
-                    <span className="logo-im">IM</span>
-                    <span className="logo-progress">PROGRESS</span>
-                </h1>
-                </div>
-            )}
-          </div>
-
-          <div className="nav-item searchbar-container">
-            <input 
-                type="text" 
-                placeholder="Buscar" 
-                className="searchbar"
-            /><IoSearchSharp className="icon"/>
-          </div>
-
-            <div>
-                <User />
-            </div>
-        </nav>
-      </header>
+    {/* Usuario */}
+    <div>
+      <User />
+    </div>
+  </nav>
+</header>
 
       {/* Sidebar*/}
       <Sidebar showNav={showNav} setShowNav={setShowNav} />
